@@ -1,0 +1,24 @@
+.header{
+    background-color:#4283fcde;
+    color:white;
+    padding:20px;
+    /*para que los apartados eten en la derecha centrado*/
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header h1{
+    margin:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
