@@ -1,1 +1,19 @@
-<p>contacto works!</p>
+<h2 class="titulo">CONTACTANOS</h2>
+
+<form class="formulario" [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+
+    <label class="etiqueta">Nombre</label>
+    <input class="campo" formControlName="name" type="text">
+
+    <label class="etiqueta">Email</label>
+    <input class="campo" formControlName="email" type="email">
+
+    <label class="etiqueta">Telefono</label>
+    <input class="campo" formControlName="telefono" type="tel">
+
+    <label class="etiqueta">Descripcion</label>
+    <input class="campo" formControlName="descripcion" type="text">
+
+    <button class="boton" type="submit">Enviar</button>
+
+</form>

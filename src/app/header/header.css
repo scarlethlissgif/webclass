@@ -1,11 +1,16 @@
 .header{
-    background-color:#4283fcde;
-    color:white;
-    padding:20px;
-    /*para que los apartados eten en la derecha centrado*/
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    background: rgba(20,20,45,.85);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 2px solid #00e5ff;
+
+    box-shadow: 0 0 20px rgba(0,229,255,.35);
 }
 
 .header h1{

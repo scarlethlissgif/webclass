@@ -1,0 +1,99 @@
+.inicio{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero{
+    background:rgba(219, 31, 31, 0.048);;
+    color:white;
+    text-align:center;
+    padding:70px 40px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:700px;
+    margin:20px auto;
+    line-height:1.8;
+}
+
+.hero button{
+    margin-top:25px;
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#1976d2;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.hero button:hover{
+    background:#2e80bb;
+    transform:scale(1.05);
+}
+
+.hero:hover{
+
+    transform:translateY(-12px) scale(1.03);
+    border-color:#00f5ff;
+    box-shadow:0 0 20px rgba(0,245,255,.7),0 0 40px rgba(122,45,255,.5);
+}
+.beneficios{
+    width: fit-content;
+    margin: 60px auto;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.card{
+    width: 300px;
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 30px;
+    box-sizing: border-box;
+    background:rgba(226, 209, 209, 0.603);
+}
+
+.card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+    border-color:#00f5ff;
+    box-shadow:0 0 20px rgba(0,245,255,.7),0 0 40px rgba(122,45,255,.5);
+}
+
+img{
+    width:60px;
+    height:60px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#1a1699;
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.7;
+}

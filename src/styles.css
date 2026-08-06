@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 /* 2. Remove default margin */
 *:not(dialog) {
     margin: 0;
@@ -22,6 +23,19 @@ body {
     line-height: 1.5;
     /* 5. Improve text rendering */
     -webkit-font-smoothing: antialiased;
+    
+}
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        135deg,
+        #050816 0%,
+        #0b1026 35%,
+        #11183d 70%,
+        #1b1464 100%
+    );
+    color: white;
 }
 
 /* 6. Improve media defaults */

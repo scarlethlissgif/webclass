@@ -1,1 +1,23 @@
-<p>productos works!</p>
+<div class="contenedor">
+    
+
+    @for (producto of productos; track producto.id){
+
+        <div class="producto">
+            <img [src]="producto.url" [alt]="producto.nombre">
+
+            <h3>{{ producto.nombre }}</h3>
+
+            <p class="precio">${{ producto.precio }}</p>
+
+            @if (producto.stock > 0){
+                <p class="disponible">Producto Disponible</p>
+            } @else {
+                <p class="agotado"> Producto Agotado</p>
+            }
+
+        </div>
+
+    }
+
+</div>
