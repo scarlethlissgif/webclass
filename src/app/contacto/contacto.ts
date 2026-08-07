@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormControl,FormGroup, FormBuilder } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { ReactiveFormsModule, FormControl,FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { email } from '@angular/forms/signals';
 
 @Component({
@@ -10,19 +10,21 @@ import { email } from '@angular/forms/signals';
 })
 export class Contacto {
 
-  formularioContacto;
-
-  constructor(private fb: FormBuilder) {
-    this.formularioContacto = this.fb.group({
-      name: [''],
-      email: [''],
-      telefono: [''],
-      descripcion: ['']
+  private fb= inject(FormBuilder);
+  
+  formularioContacto = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      telefono: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      descripcion: ['',[Validators.required, Validators.minLength(10), Validators.maxLength(200)]],
     });
-  }
+  
 
-  enviar() {
-    console.log(this.formularioContacto.value);
-    alert('Informacion enviada')
+enviar() {
+  if (this.formularioContacto.valid) {
+    alert('El formulario se envio de manera correcta al servidor')
+  } else {
+    alert('El formulario tiene ingresados de manera incorrecta')
   }
+}
 }

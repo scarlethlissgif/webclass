@@ -2,18 +2,54 @@
 
 <form class="formulario" [formGroup]="formularioContacto" (ngSubmit)="enviar()">
 
-    <label class="etiqueta">Nombre</label>
-    <input class="campo" formControlName="name" type="text">
+<label class="etiqueta">Nombre</label>
+<input class="campo" formControlName="name" type="text" required maxlength="10">
 
-    <label class="etiqueta">Email</label>
-    <input class="campo" formControlName="email" type="email">
+@if (formularioContacto.get('name')?.touched && formularioContacto.get('name')?.errors?.['required']) {
+    <small class="error">El nombre es obligatorio.</small>
+}
 
-    <label class="etiqueta">Telefono</label>
-    <input class="campo" formControlName="telefono" type="tel">
+<label class="etiqueta">Email</label>
+<input class="campo" formControlName="email" type="email">
 
-    <label class="etiqueta">Descripcion</label>
-    <input class="campo" formControlName="descripcion" type="text">
+@if (formularioContacto.get('email')?.touched && formularioContacto.get('email')?.errors?.['required']) {
+    <small class="error">El correo es obligatorio.</small>
+}
 
-    <button class="boton" type="submit">Enviar</button>
+@if (formularioContacto.get('email')?.touched && formularioContacto.get('email')?.errors?.['email']) {
+    <small class="error">Ingrese un correo válido.</small>
+}
+
+<label class="etiqueta">Telefono</label>
+<input class="campo" formControlName="telefono" type="tel" minlength="10" maxlength="10">
+
+@if (formularioContacto.get('telefono')?.touched && formularioContacto.get('telefono')?.errors?.['required']) {
+    <small class="error">El teléfono es obligatorio.</small>
+}
+
+@if (formularioContacto.get('telefono')?.touched && formularioContacto.get('telefono')?.errors?.['minlength']) {
+    <small class="error">El teléfono debe tener 10 dígitos.</small>
+}
+
+@if (formularioContacto.get('telefono')?.touched && formularioContacto.get('telefono')?.errors?.['maxlength']) {
+    <small class="error">El teléfono debe tener 10 dígitos.</small>
+}
+
+<label class="etiqueta">Descripcion</label>
+<input class="campo" formControlName="descripcion" type="text">
+
+@if (formularioContacto.get('descripcion')?.touched && formularioContacto.get('descripcion')?.errors?.['required']) {
+    <small class="error">La descripción es obligatoria.</small>
+}
+
+@if (formularioContacto.get('descripcion')?.touched && formularioContacto.get('descripcion')?.errors?.['minlength']) {
+    <small class="error">La descripción debe tener al menos 10 caracteres.</small>
+}
+
+@if (formularioContacto.get('descripcion')?.touched && formularioContacto.get('descripcion')?.errors?.['maxlength']) {
+    <small class="error">La descripción no puede superar los 200 caracteres.</small>
+}
+
+<button class="boton" type="submit">Enviar</button>
 
 </form>
